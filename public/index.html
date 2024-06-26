@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snowball Fight</title>
+
+    <style>
+      @font-face {
+        font-family: "jizz mass creamy";
+        src: url("file:///C:/Users/Thinkpad/AppData/Local/Microsoft/Windows/Fonts/jizz_mass_creamy_font.ttf") format("truetype");
+      }
+
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #52abe7; /* Blue background color */
+        font-family: "jizz mass creamy", sans-serif; /* Use jizz mass font */
+        color: white; /* White text color */
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .title {
+        font-size: 130px;
+        margin-bottom: 20px;
+        text-decoration: underline; /* Underline */
+      }
+
+      .group-member {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+      .by {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+      .start-button {
+        padding: 15px 30px;
+        font-size: 20px;
+        background-color: #efebeb;
+        color: rgb(14, 147, 236);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .start-button:hover {
+        background-color: #050605;
+      }
+
+      /* Hide game canvas by default */
+      #canvas {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Title Page -->
+    <div class="container" id="title-page">
+      <div class="title">Snowball Fight</div>
+      <div class="by">by</div>
+      <div class="group-member">Bilal Ali (21k-3153)</div>
+      <div class="group-member">Ehaab Tariq Ahmed (21k-3372)</div>
+      <div class="group-member">Abdur Rehman (21k-4529)</div>
+      <button class="start-button" onclick="startGame()">Start</button>
+    </div>
+
+    <!-- Game Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/index.js"></script>
+    
+    <script>
+      function startGame() {
+        document.getElementById("title-page").style.display = "none"; // Hide title page
+        document.getElementById("canvas").style.display = "block"; // Show game canvas
+      }
+    </script>
+  </body>
+</html>
